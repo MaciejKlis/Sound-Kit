@@ -5,6 +5,8 @@ let record1 = [];
 let record2 = [];
 let record3 = [];
 
+let keysArr = ["q","w","e","r","a","s","d","f","Q","W","E","R","A","S","D","F"];
+
 function addSoundToRecord(event){
 	let recordStatus = document.getElementsByName('recordSwitch')[1].checked;
 	let recordTape = parseInt(document.querySelector('input[name="recordChannel"]:checked').value);
@@ -13,25 +15,25 @@ function addSoundToRecord(event){
 		switch (recordTape) {
 			case 0 :
 				if(record0.length < 10){
-					record0.push(event.key);
+					record0.push(event.key.toLowerCase());
 					addLetterToHTML(record0, document.querySelector("#firstRecord"));
 				}
 				break;
 			case 1 :
 				if(record1.length < 10){
-					record1.push(event.key);
+					record1.push(event.key.toLowerCase());
 					addLetterToHTML(record1, document.querySelector("#secondRecord"));
 				}
 				break;
 			case 2 :
 				if(record2.length < 10){
-					record2.push(event.key);
+					record2.push(event.key.toLowerCase());
 					addLetterToHTML(record2, document.querySelector("#thridRecord"));
 				}
 				break;
 			case 3 :
 				if(record3.length < 10){
-					record3.push(event.key);
+					record3.push(event.key.toLowerCase());
 					addLetterToHTML(record3, document.querySelector("#fourthRecord"));
 				}
 				break;
@@ -45,6 +47,13 @@ function addLetterToHTML(array, tapeSelector){
 
 //bind keys to sounds
 document.body.addEventListener('keypress' , (event) =>{
+
+		if( keysArr.includes(event.key)){
+			console.log('siema');
+		}else{
+			console.log(event.key);
+		}
+
 		addSoundToRecord(event);
 		switch(event.key){
 		case 'q' :
@@ -114,3 +123,22 @@ function f(){
 	f.currentTime = 0;
 	f.play();
 }
+
+document.querySelector("#play").addEventListener('click',() => {
+	let i = 0;
+	setInterval(function(){
+		if(document.querySelector('input[name="selectPlay0"]').checked){
+			document.querySelector("#"+record0[i]).play();
+		}
+		if(document.querySelector('input[name="selectPlay1"]').checked){
+			document.querySelector("#"+record1[i]).play();
+		}
+		if(document.querySelector('input[name="selectPlay2"]').checked){
+			document.querySelector("#"+record2[i]).play();
+		}
+		if(document.querySelector('input[name="selectPlay3"]').checked){
+			document.querySelector("#"+record3[i]).play();
+		}
+		i++;
+	}, 1004);
+})

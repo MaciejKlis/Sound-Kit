@@ -15,18 +15,82 @@
 		<audio src="sounds/d.wav" controls id="d"></audio>
 		<audio src="sounds/f.wav" controls id="f"></audio>
 
-		<form >
-		  <input type="radio" name="recordChannel" value="0" checked="checked"> ścieżka 1: <span id="firstRecord"></span><br>
-		  <input type="radio" name="recordChannel" value="1"> ścieżka 2: <span id="secondRecord"></span><br>
-		  <input type="radio" name="recordChannel" value="2"> ścieżka 3: <span id="thridRecord"></span><br>
-			<input type="radio" name="recordChannel" value="3"> ścieżka 4: <span id="fourthRecord"></span><br>
-		</form>
-		<form>
-			Nagrywanie:<br>
-			OFF<input type="radio" name="recordSwitch" value="0" checked="checked">
-			<input type="radio" name="recordSwitch" value="1">ON
-		</form>
-
+		<table style="border: 1px black solid">
+			<tr>
+				<td><button id="play">Odtwórz</button></td>
+				<td>
+						<form>
+							Nagrywanie:<br>
+							OFF
+							<input type="radio" name="recordSwitch" value="0" checked="checked">
+							<input type="radio" name="recordSwitch" value="1">
+							ON
+						</form>
+					</td>
+				<td>
+					Nr ścieżki
+				</td>
+				<td>
+					Nagrane dźwięki
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="checkbox" name="selectPlay0">
+				</td>
+				<td>
+					<input type="radio" name="recordChannel" value="0" checked="checked">
+				</td>
+				<td>
+					ścieżka 1:
+				</td>
+				<td>
+					<span id="firstRecord"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="checkbox" name="selectPlay1">
+				</td>
+				<td>
+					<input type="radio" name="recordChannel" value="1">
+				</td>
+				<td>
+					ścieżka 2:
+				</td>
+				<td>
+					<span id="secondRecord"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="checkbox" name="selectPlay2">
+				</td>
+				<td>
+					<input type="radio" name="recordChannel" value="2">
+				</td>
+				<td>
+					ścieżka 3:
+				</td>
+				<td>
+					<span id="thridRecord"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="checkbox" name="selectPlay3">
+				</td>
+				<td>
+					<input type="radio" name="recordChannel" value="3">
+				</td>
+				<td>
+					ścieżka 4:
+				</td>
+				<td>
+					<span id="fourthRecord"></span>
+				</td>
+			</tr>
+		</table>
 		<script src="js/main.js"></script>
 	</body>
 </html>
