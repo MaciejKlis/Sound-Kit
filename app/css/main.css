@@ -1,0 +1,67 @@
+body {
+	margin: 0;
+	background: url('../bg.jpg');
+}
+.layer {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.31);
+	top: 0;
+}
+table{
+	position: relative;
+	z-index: 10;
+	border: 1px #fff solid;
+}
+thead {
+	background: rgba(80,69,69, 0.8);
+	color: #fff;
+	font-weight: 400;
+}
+thead span{
+	font-weight: 400;
+
+}
+tbody {
+	background: rgba(239,239,239,0.8);
+	color: #000;
+}
+td{
+	width: 180px;
+	padding: 10px;
+}
+.play_cell{
+	width: 90px;
+}
+.record_cell {
+	width: 140px;
+}
+.play_cell input, tbody .record_cell input{
+	margin-left: calc(50% - 7px);
+}
+.name_cell {
+	width: 110px;
+}
+.keyboard {
+	position: relative;
+	z-index: 10;
+	width: 500px;
+	height: 200px;
+}
+.key {
+	display: inline-table;
+	width: 90px;
+	height: 90px;
+	margin: 4px;
+	background: red;
+	border: blue;
+}
+
+.key:hover {
+	margin: 8px 0 0 8px;
+}
+
+.key_letter {
+
+}

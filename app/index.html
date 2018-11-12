@@ -1,96 +1,132 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-	<head>
-		<meta charset="utf-8">
-		<title>Sound-Kit</title>
-		<link rel="stylesheet" href="css/main.css">
-	</head>
-	<body>
-		<audio src="sounds/q.wav" controls id="q"></audio>
-		<audio src="sounds/w.wav" controls id="w"></audio>
-		<audio src="sounds/e.wav" controls id="e"></audio>
-		<audio src="sounds/r.wav" controls id="r"></audio>
-		<audio src="sounds/a.wav" controls id="a"></audio>
-		<audio src="sounds/s.wav" controls id="s"></audio>
-		<audio src="sounds/d.wav" controls id="d"></audio>
-		<audio src="sounds/f.wav" controls id="f"></audio>
 
-		<table style="border: 1px black solid">
+<head>
+	<meta charset="utf-8">
+	<title>Sound-Kit</title>
+	<link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+	<audio src="sounds/q.wav" id="q"></audio>
+	<audio src="sounds/w.wav" id="w"></audio>
+	<audio src="sounds/e.wav" id="e"></audio>
+	<audio src="sounds/r.wav" id="r"></audio>
+	<audio src="sounds/a.wav" id="a"></audio>
+	<audio src="sounds/s.wav" id="s"></audio>
+	<audio src="sounds/d.wav" id="d"></audio>
+	<audio src="sounds/f.wav" id="f"></audio>
+	<table>
+		<thead>
 			<tr>
-				<td><button id="play">Odtwórz</button></td>
-				<td>
-						<form>
-							Nagrywanie:<br>
-							OFF
-							<input type="radio" name="recordSwitch" value="0" checked="checked">
-							<input type="radio" name="recordSwitch" value="1">
-							ON
-						</form>
-					</td>
-				<td>
-					Nr ścieżki
-				</td>
-				<td>
-					Nagrane dźwięki
-				</td>
+				<th class="play_cell">
+					<button id="play">Odtwórz</button>
+				</th>
+				<th class="record_cell">
+					<form>
+						<span>Nagrywanie:</span><br>
+						<span>OFF</span>
+						<input type="radio" name="recordSwitch" value="0" checked="checked">
+						<input type="radio" name="recordSwitch" value="1">
+						<span>ON</span>
+					</form>
+				</th>
+				<th class="name_cell">
+					<span>Nr ścieżki</span>
+				</th>
+				<th>
+					<span>Nagrane dźwięki</span>
+				</th>
 			</tr>
+		</thead>
+		<tbody>
 			<tr>
-				<td>
+				<td class="play_cell">
 					<input type="checkbox" name="selectPlay0">
 				</td>
-				<td>
+				<td class="record_cell">
 					<input type="radio" name="recordChannel" value="0" checked="checked">
 				</td>
-				<td>
-					ścieżka 1:
+				<td class="name_cell">
+					<span>ścieżka 1:</span>
 				</td>
 				<td>
 					<span id="firstRecord"></span>
 				</td>
 			</tr>
 			<tr>
-				<td>
+				<td class="play_cell">
 					<input type="checkbox" name="selectPlay1">
 				</td>
-				<td>
+				<td class="record_cell">
 					<input type="radio" name="recordChannel" value="1">
 				</td>
-				<td>
-					ścieżka 2:
+				<td class="name_cell">
+					<span>ścieżka 2:</span>
 				</td>
 				<td>
 					<span id="secondRecord"></span>
 				</td>
 			</tr>
 			<tr>
-				<td>
+				<td class="play_cell">
 					<input type="checkbox" name="selectPlay2">
 				</td>
-				<td>
+				<td class="record_cell">
 					<input type="radio" name="recordChannel" value="2">
 				</td>
-				<td>
-					ścieżka 3:
+				<td class="name_cell">
+					<span>ścieżka 3:</span>
 				</td>
 				<td>
 					<span id="thridRecord"></span>
 				</td>
 			</tr>
 			<tr>
-				<td>
+				<td class="play_cell">
 					<input type="checkbox" name="selectPlay3">
 				</td>
-				<td>
+				<td class="record_cell">
 					<input type="radio" name="recordChannel" value="3">
 				</td>
-				<td>
-					ścieżka 4:
+				<td class="name_cell">
+					<span>ścieżka 4:</span>
 				</td>
 				<td>
 					<span id="fourthRecord"></span>
 				</td>
 			</tr>
-		</table>
-		<script src="js/main.js"></script>
-	</body>
+		</tbody>
+	</table>
+	<div class="keyboard">
+		<div class="key key_q">
+			<span class="key_letter">Q</span>
+		</div>
+		<div class="key key_w">
+			<span class="key_letter">W</span>
+		</div>
+		<div class="key key_e">
+			<span class="key_letter">E</span>
+		</div>
+		<div class="key key_r">
+			<span class="key_letter">R</span>
+		</div>
+		<div class="key key_a">
+			<span class="key_letter">A</span>
+		</div>
+		<div class="key key_s">
+			<span class="key_letter">S</span>
+		</div>
+		<div class="key key_d">
+			<span class="key_letter">D</span>
+		</div>
+		<div class="key key_f">
+			<span class="key_letter">F</span>
+		</div>
+	</div>
+	<div class="layer"></div>
+	<script src="js/main.js"></script>
+</body>
+
 </html>
