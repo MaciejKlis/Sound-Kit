@@ -7,4 +7,4 @@
 2. ~~Bind sounds to keys~~
 3. ~~Possibility to record sounds, on four different channels~~
 4. ~~Possibility to play one or more channels at one time~~
-5. Make friendly look :)
+5. ~~Make friendly look :)~~

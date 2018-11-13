@@ -1,17 +1,19 @@
 "use strict";
 
+//Arrays to save sounds
 let record0 = [];
 let record1 = [];
 let record2 = [];
 let record3 = [];
 
+//Array with range of keys
 let keysArr = ["q","w","e","r","a","s","d","f","Q","W","E","R","A","S","D","F"];
 
 function addSoundToRecord(event){
-	let recordStatus = document.getElementsByName('recordSwitch')[1].checked;
-	let recordTape = parseInt(document.querySelector('input[name="recordChannel"]:checked').value);
+	let recordStatus = document.getElementsByName('recordSwitch')[1].checked; //If first input checked return true
+	let recordTape = parseInt(document.querySelector('input[name="recordChannel"]:checked').value); //checking which tape input is selected return int
 
-	if(recordStatus === true){
+	if(recordStatus === true){ //if recordStatus is equal true then we record
 		switch (recordTape) {
 			case 0 :
 				if(record0.length < 10){
@@ -48,11 +50,13 @@ function addLetterToHTML(array, tapeSelector){
 //bind keys to sounds
 document.body.addEventListener('keypress' , (event) =>{
 
-		if( keysArr.includes(event.key)){
-			console.log('siema');
-		}else{
-			console.log(event.key);
+		if( !keysArr.includes(event.key)){
+			return;
 		}
+
+		let LowLetter = event.key.toLowerCase();
+		let divKey = document.querySelector("#key_"+LowLetter);
+		divKey.style.margin = "4px 0 0 8px";
 
 		addSoundToRecord(event);
 		switch(event.key){
@@ -81,6 +85,16 @@ document.body.addEventListener('keypress' , (event) =>{
 			f();
 			break;
 	}
+})
+
+document.body.addEventListener('keyup' , (event) =>{
+
+		if( !keysArr.includes(event.key)){
+			return;
+		}
+		let LowLetter = event.key.toLowerCase();
+		let divKey = document.querySelector("#key_"+LowLetter);
+		divKey.style.margin = "4px";
 })
 
 function q(){
