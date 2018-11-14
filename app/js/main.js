@@ -16,9 +16,9 @@ function addSoundToRecord(event){
 	if(recordStatus === true){ //if recordStatus is equal true then we record
 		switch (recordTape) {
 			case 0 :
-				if(record0.length < 10){
-					record0.push(event.key.toLowerCase());
-					addLetterToHTML(record0, document.querySelector("#firstRecord"));
+				if(record0.length < 10){ //maximum length of record is 10 sounds
+					record0.push(event.key.toLowerCase()); //adding sound to array must be lowerCase
+					addLetterToHTML(record0, document.querySelector("#firstRecord"));//addinf letter to table
 				}
 				break;
 			case 1 :
@@ -43,22 +43,25 @@ function addSoundToRecord(event){
 	}
 }
 
-function addLetterToHTML(array, tapeSelector){
+function addLetterToHTML(array, tapeSelector){//function resonsible for adding
 	tapeSelector.innerHTML = array.join().toUpperCase();
 }
 
 //bind keys to sounds
 document.body.addEventListener('keypress' , (event) =>{
 
+		//checking if pressed key is containing by keysArr
 		if( !keysArr.includes(event.key)){
 			return;
 		}
 
+		//Animation of pressed key
 		let LowLetter = event.key.toLowerCase();
 		let divKey = document.querySelector("#key_"+LowLetter);
 		divKey.style.margin = "4px 0 0 8px";
 
 		addSoundToRecord(event);
+
 		switch(event.key){
 		case 'q' :
 			q();
@@ -88,15 +91,18 @@ document.body.addEventListener('keypress' , (event) =>{
 })
 
 document.body.addEventListener('keyup' , (event) =>{
-
+		//checking if pressed key is containing by keysArr
 		if( !keysArr.includes(event.key)){
 			return;
 		}
+
+		//Animation of prresed key when key up
 		let LowLetter = event.key.toLowerCase();
 		let divKey = document.querySelector("#key_"+LowLetter);
 		divKey.style.margin = "4px";
 })
 
+//function which play sound
 function q(){
 	let q = document.querySelector("#q");
 	q.currentTime = 0;
@@ -138,9 +144,12 @@ function f(){
 	f.play();
 }
 
+
 document.querySelector("#play").addEventListener('click',() => {
 	let i = 0;
+	//each sound continues 1 second and interval that triggers
 	setInterval(function(){
+		//if record is checked then we play sound
 		if(document.querySelector('input[name="selectPlay0"]').checked){
 			document.querySelector("#"+record0[i]).play();
 		}
